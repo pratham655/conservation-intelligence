@@ -1,0 +1,258 @@
+export interface FeatureVisual {
+  id: string;
+  title: string;
+  subtitle: string;
+  tag: string;
+  imageUrl: string;
+  alt: string;
+  caption: string;
+  satelliteMetadata: {
+    constellation: string;
+    spectralBands: string;
+    resolution: string;
+    cadence: string;
+  };
+}
+
+export const FEATURE_VISUALS: Record<string, FeatureVisual> = {
+  overview: {
+    id: "overview",
+    title: "Ecosystem Workspace & Portfolio Overview",
+    subtitle: "Consolidated satellite-derived trajectory, multi-sensor indicators, and governance status for the project catchment.",
+    tag: "PORTFOLIO INTELLIGENCE",
+    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
+    alt: "Pristine meandering river flowing through an expansive green valley and mountain catchment",
+    caption: "Catchment overview showing natural hydrology and topographical contours under continuous observation.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2A/B + Landsat-9 OLI-2",
+      spectralBands: "B2, B3, B4, B8 (True Color + NIR)",
+      resolution: "10m Ground Sample Distance",
+      cadence: "5-day revisit cycle",
+    },
+  },
+  baseline: {
+    id: "baseline",
+    title: "Environmental Baseline Generator",
+    subtitle: "Historical satellite observations establishing Day Zero ecological status, eliminating retrospective guesswork.",
+    tag: "CAPABILITY 01 // DAY-ZERO REFERENCE",
+    imageUrl: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=80",
+    alt: "Dry cracked earth and receding water line on degraded lakebed before intervention",
+    caption: "Pre-intervention degraded lakebed and silted shoreline captured during Day-Zero baseline synthesis.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2 MSI + Landsat-8 Historical",
+      spectralBands: "B3 (Green), B8 (NIR) for NDWI baseline",
+      resolution: "10m / 30m composite",
+      cadence: "Historical 5-year rolling baseline",
+    },
+  },
+  monitoring: {
+    id: "monitoring",
+    title: "Continuous Multi-Temporal Satellite Monitoring",
+    subtitle: "5-day constellation revisit frequency tracking biophysical indices across seasonal moisture shifts.",
+    tag: "CAPABILITY 02 // MULTI-TEMPORAL SURVEILLANCE",
+    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80",
+    alt: "Orbital perspective of Earth waterways, deltas, and shifting coastal hydrological systems",
+    caption: "Multi-temporal satellite radar and optical telemetry tracking active hydrological surface shifts.",
+    satelliteMetadata: {
+      constellation: "Sentinel-1 SAR + Sentinel-2 Multi-Spectral",
+      spectralBands: "VV/VH Polarimetric + Optical Red-Edge (B5, B6)",
+      resolution: "10m multi-temporal coregistered",
+      cadence: "5-day synoptic revisit",
+    },
+  },
+  recovery: {
+    id: "recovery",
+    title: "Expected Recovery vs. Reality Trajectory",
+    subtitle: "Ecological growth modeling comparing empirical biophysical signals against target restoration curves.",
+    tag: "CAPABILITY 04 // TRAJECTORY BENCHMARKING",
+    imageUrl: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=80",
+    alt: "Lush green wetland canopy and tranquil emergent reeds bathed in soft natural light",
+    caption: "Restored riparian canopy exhibiting robust vegetative rebound along protected shorelines.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2 MSI Level-2A BOA",
+      spectralBands: "NDVI (B8-B4)/(B8+B4) & EVI",
+      resolution: "10m analytical grid",
+      cadence: "Monthly rolling trajectory curve",
+    },
+  },
+  anomalies: {
+    id: "anomalies",
+    title: "Spatial & Temporal Anomaly Detection",
+    subtitle: "Automated isolation of moisture deficits, seasonal desiccation, and unauthorized localized disturbances.",
+    tag: "CAPABILITY 03 // EARLY ANOMALY ALERT",
+    imageUrl: "https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?auto=format&fit=crop&w=2000&q=80",
+    alt: "Stressed parched soil with seasonal desiccation patterns and drying mudflats",
+    caption: "Localized thermal stress and moisture deficit flagged by cross-spectral difference analysis.",
+    satelliteMetadata: {
+      constellation: "Landsat-9 TIRS (Thermal) + Sentinel-2 MSI",
+      spectralBands: "Thermal Band 10 + NDWI (B3, B8)",
+      resolution: "10m downscaled thermal anomaly grid",
+      cadence: "Per-acquisition difference flagging",
+    },
+  },
+  prediction: {
+    id: "prediction",
+    title: "Intervention Failure Predictor & Explainable AI",
+    subtitle: "Early warning risk modeling identifying root causes before catastrophic ecological degradation occurs.",
+    tag: "CAPABILITY 05 // PREDICTIVE FORECASTING",
+    imageUrl: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=2000&q=80",
+    alt: "Atmospheric cloud formations, rain catchment storm front moving across an expansive watershed",
+    caption: "Catchment hydrology and precipitation vectors driving 90-day predictive risk forecast matrices.",
+    satelliteMetadata: {
+      constellation: "GPM IMERG (Precipitation) + Sentinel-2",
+      spectralBands: "Multi-satellite rainfall precipitation + Inflow telemetry",
+      resolution: "0.1° GPM gridded to 10m project catchment",
+      cadence: "Daily weather + 5-day optical integration",
+    },
+  },
+  impact: {
+    id: "impact",
+    title: "Conservation Impact Score & Ecological Returns",
+    subtitle: "Empirically quantified biodiversity habitat, water retention volume, and carbon sequestration metrics.",
+    tag: "CAPABILITY 09 // SCIENTIFIC IMPACT RATING",
+    imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80",
+    alt: "Thriving lush wetland sanctuary with pristine water, mist, and dense ecological diversity",
+    caption: "Biodiversity corridor showing verified ecological returns and increased water holding capacity.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2 + GEDI Lidar Canopy Model",
+      spectralBands: "Biomass Density + NDTI (Turbidity) + NDWI",
+      resolution: "Integrated 10m Ecological Index",
+      cadence: "Quarterly synthesized impact scoring",
+    },
+  },
+  governance: {
+    id: "governance",
+    title: "Financial Governance & Physical Integrity Review",
+    subtitle: "Linking public fund disbursements to verifiable biophysical outcomes to eliminate ghost conservation works.",
+    tag: "CAPABILITY 09 // AUDIT & INTEGRITY CHECK",
+    imageUrl: "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=2000&q=80",
+    alt: "Earthen check dam and water reservoir weir maintaining catchment water retention",
+    caption: "Physical check dam and stone contour bunds correlated with fund utilization milestones.",
+    satelliteMetadata: {
+      constellation: "Sentinel-1 C-SAR + High-Res Optical",
+      spectralBands: "SAR Backscatter Difference (Coherence Tracking)",
+      resolution: "Interferometric coherence @ 10m",
+      cadence: "Milestone-triggered satellite audit",
+    },
+  },
+  actions: {
+    id: "actions",
+    title: "Corrective Action Recommendation Engine",
+    subtitle: "Precision engineering prescriptions, desilting targets, and bio-shielding specifications based on satellite findings.",
+    tag: "CAPABILITY 07 // REMEDIATION PRESCRIPTIONS",
+    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80",
+    alt: "Rugged terrain and watershed contours requiring targeted hydrological civil works and planting",
+    caption: "Micro-catchment zones prioritized for mechanical silt removal and native vetiver bio-shielding.",
+    satelliteMetadata: {
+      constellation: "ALOS AW3D30 DEM + Sentinel-2 Topo Analysis",
+      spectralBands: "Slope, Flow Accumulation & Surface Runoff Vectors",
+      resolution: "Hydrological flow modeling at 10m",
+      cadence: "Action-cycle updated",
+    },
+  },
+  verification: {
+    id: "verification",
+    title: "Closed-Loop Post-Remediation Impact Verification",
+    subtitle: "Proving whether corrective measures reversed anomalies and restored intended ecological recovery slopes.",
+    tag: "CAPABILITY 08 // CLOSED-LOOP VERIFICATION",
+    imageUrl: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=2000&q=80",
+    alt: "Dense flourishing forest canopy with sunlight breaking through verified healthy growth",
+    caption: "Verified canopy density and soil moisture recovery confirmed across two post-action satellite passes.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2 MSI Level-2A",
+      spectralBands: "Pre vs Post Interventions (B8, B4, B3, B11 SWIR)",
+      resolution: "10m multi-temporal change matrix",
+      cadence: "T+30, T+60, T+90 post-remediation review",
+    },
+  },
+  copilot: {
+    id: "copilot",
+    title: "RAG-Grounded Conservation AI Copilot",
+    subtitle: "Query multi-spectral telemetry, hydrological models, and conservation guidelines with zero hallucination.",
+    tag: "CAPABILITY 12 // GROUNDED SCIENTIFIC ADVISORY",
+    imageUrl: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=80",
+    alt: "Tranquil mist rising over calm reflective lake surrounded by evergreen pine forest",
+    caption: "Scientific intelligence synthesis referencing verified regional soil hydrology and satellite telemetry.",
+    satelliteMetadata: {
+      constellation: "Sentinel-1/2 + Climate Indices + Soil Moisture Data",
+      spectralBands: "Vector embedded multi-modal repository",
+      resolution: "Project catchment semantic indexing",
+      cadence: "Continuous live grounding",
+    },
+  },
+  reports: {
+    id: "reports",
+    title: "Evidence-Based Impact Reports & Audit Generator",
+    subtitle: "Export authoritative, cryptographically stamped PDF reports containing raw satellite evidence for stakeholders.",
+    tag: "CAPABILITY 13 // AUDIT EVIDENCE REPOSITORY",
+    imageUrl: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80",
+    alt: "Vast panoramic aerial landscape showing complete valley watershed, rivers, and hills",
+    caption: "Standardized audit summaries exportable for department review and multilateral funders.",
+    satelliteMetadata: {
+      constellation: "Full Sentinel + Landsat Repository",
+      spectralBands: "Multi-sensor cryptographically stamped summary",
+      resolution: "Publication-grade cartographic vector/raster exports",
+      cadence: "On-demand automated compilation",
+    },
+  },
+  "image-analysis": {
+    id: "image-analysis",
+    title: "Satellite Image Analysis & Change Detection",
+    subtitle: "Coregistered multi-temporal pixel comparisons, true/false color composites, and biophysical index masks.",
+    tag: "ENVIRONMENT // SATELLITE IMAGERY",
+    imageUrl: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=2000&q=80",
+    alt: "High-resolution satellite perspective of natural hydrological features and landcover patterns",
+    caption: "Dual-epoch satellite scene coregistration for pixel-level biophysical index change detection.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2A/B MSI",
+      spectralBands: "13 Spectral Bands (RGB, NIR, SWIR, Red-Edge)",
+      resolution: "10m GSD (Visible/NIR)",
+      cadence: "5-day constellation revisit",
+    },
+  },
+  image_analysis: {
+    id: "image_analysis",
+    title: "Satellite Image Analysis & Change Detection",
+    subtitle: "Coregistered multi-temporal pixel comparisons, true/false color composites, and biophysical index masks.",
+    tag: "ENVIRONMENT // SATELLITE IMAGERY",
+    imageUrl: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=2000&q=80",
+    alt: "High-resolution satellite perspective of natural hydrological features and landcover patterns",
+    caption: "Dual-epoch satellite scene coregistration for pixel-level biophysical index change detection.",
+    satelliteMetadata: {
+      constellation: "Sentinel-2A/B MSI",
+      spectralBands: "13 Spectral Bands (RGB, NIR, SWIR, Red-Edge)",
+      resolution: "10m GSD (Visible/NIR)",
+      cadence: "5-day constellation revisit",
+    },
+  },
+  explainability: {
+    id: "explainability",
+    title: "XAI Diagnostic & Contributing Factor Analysis",
+    subtitle: "Decomposing predictive risk and trajectory deviations into quantifiable environmental and climatic drivers.",
+    tag: "INTELLIGENCE // CONTRIBUTING FACTORS",
+    imageUrl: "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=2000&q=80",
+    alt: "Atmospheric and ecological canopy dynamics in a river basin watershed",
+    caption: "Multi-factor attribution models synthesizing meteorological indices, soil moisture, and upstream hydrology.",
+    satelliteMetadata: {
+      constellation: "ERA5-Land + CHIRPS + Sentinel-2",
+      spectralBands: "Multi-variable Hydrological Vectors",
+      resolution: "Gridded 10m Catchment Aggregation",
+      cadence: "Synoptic monthly attribution",
+    },
+  },
+  integrity: {
+    id: "integrity",
+    title: "Physical Integrity Review & Milestone Verification",
+    subtitle: "Independent satellite backscatter and surface change audit comparing reported milestones with observed ground progress.",
+    tag: "GOVERNANCE // INTEGRITY AUDIT",
+    imageUrl: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=2000&q=80",
+    alt: "Water conservation structures and catchment check-dams in protected terrain",
+    caption: "Independent satellite telemetry review identifying potential inconsistencies requiring field verification.",
+    satelliteMetadata: {
+      constellation: "Sentinel-1 C-SAR + High-Res Optical",
+      spectralBands: "Coherence Interferometry + Optical SWIR",
+      resolution: "10m Surface Verification Grid",
+      cadence: "Milestone audit triggered",
+    },
+  },
+};
